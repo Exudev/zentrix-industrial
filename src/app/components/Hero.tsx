@@ -1,5 +1,5 @@
 import { ChevronRight } from "lucide-react";
-import logoImage from "../../imports/WhatsApp_Image_2026-06-07_at_17.16.04-removebg-preview.png";
+import logoImage from "../../imports/logo.png";
 import { Button } from "./ui/button";
 
 export function Hero() {

@@ -1,6 +1,6 @@
 import { Menu, X, Sun, Moon, ArrowDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import logoImage from "../../imports/WhatsApp_Image_2026-06-07_at_17.16.04-removebg-preview.png";
+import logoImage from "../../imports/logo.png";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

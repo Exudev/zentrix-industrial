@@ -1,5 +1,5 @@
 import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
-import logoImage from "../../imports/WhatsApp_Image_2026-06-07_at_17.16.04-removebg-preview.png";
+import logoImage from "../../imports/logo.png";
 
 export function Footer() {
   return (

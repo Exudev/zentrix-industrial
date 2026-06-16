@@ -2,6 +2,7 @@ import { Wrench, Cog, Bot, Sun, Snowflake, Zap, Settings, Stethoscope, Cable, Sh
 import { Link } from "react-router";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
 import { Button } from "./ui/button";
+import logoImage from "../../imports/logo.png";
 
 interface ServicesProps {
   limit?: number;
@@ -79,7 +80,14 @@ export function Services({ limit, showCTA = true, isSubPage = false }: ServicesP
     <section id="servicios" className={`${isSubPage ? "py-12" : "py-20"} bg-muted dark:bg-slate-900/40 transition-colors duration-300`}>
       <div className="container mx-auto px-4">
         {!isSubPage && (
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 pt-4">
+            <div className="mx-auto mb-6 inline-block hover:scale-105 transition-transform duration-500">
+              <img
+                src={logoImage}
+                alt="Zentrix Industrial Logo"
+                className="h-28 w-28 md:h-36 md:w-36 object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.15)] dark:brightness-0 dark:invert transition-all duration-300"
+              />
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-primary dark:text-foreground mb-4">
               Nuestros Servicios
             </h2>

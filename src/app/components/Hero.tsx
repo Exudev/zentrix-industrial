@@ -12,13 +12,13 @@ export function Hero() {
         className="absolute inset-0 w-full h-full object-cover scale-105 animate-pulse-slow"
       />
 
-      <div className="relative z-20 text-center text-white px-4 max-w-5xl mx-auto pt-16">
+      <div className="relative z-20 text-center text-white px-4 max-w-5xl mx-auto pt-28">
         <div className="mb-8">
           <div className="mx-auto mb-6 inline-block hover:scale-105 transition-transform duration-500">
             <img
               src={logoImage}
               alt="Zentrix Industrial Logo"
-              className="h-28 md:h-40 w-auto object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] dark:brightness-0 dark:invert transition-all duration-300"
+              className="h-28 w-28 md:h-40 md:w-40 object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] dark:brightness-0 dark:invert transition-all duration-300"
             />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-white">

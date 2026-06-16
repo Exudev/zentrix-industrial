@@ -11,7 +11,7 @@ export function Footer() {
               <img
                 src={logoImage}
                 alt="Zentrix Industrial Logo"
-                className="h-20 w-auto object-contain brightness-0 invert"
+                className="h-20 w-20 object-contain brightness-0 invert"
               />
             </div>
             <p className="text-white/80 mb-4">

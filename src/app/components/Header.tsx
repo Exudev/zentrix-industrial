@@ -89,11 +89,11 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/70 dark:bg-background/70 backdrop-blur-md border-b border-border/40 shadow-sm transition-all duration-300">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between animate-fade-in">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 flex-shrink-0">
             <img
               src={logoImage}
               alt="Zentrix Industrial Logo"
-              className="h-14 w-auto object-contain dark:brightness-0 dark:invert transition-all duration-300"
+              className="h-14 w-14 object-contain flex-shrink-0 dark:brightness-0 dark:invert transition-all duration-300"
             />
           </div>
 

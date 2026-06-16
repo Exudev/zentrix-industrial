@@ -1,5 +1,5 @@
 import { Clock, CheckCircle2, AlertTriangle, PhoneCall } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "./ui/card";
+import { Card, CardContent, CardFooter } from "./ui/card";
 import { Button } from "./ui/button";
 
 export function Maintenance() {

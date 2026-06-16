@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, Globe, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
@@ -67,7 +67,7 @@ export function Contact() {
               <div className="bg-muted/50 dark:bg-slate-900/40 p-5 rounded-2xl border border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h4 className="font-bold text-primary dark:text-foreground text-lg mb-3 flex items-center gap-2">
                   <span className="w-2.5 h-2.5 bg-accent rounded-full animate-pulse"></span>
-                  Yancarlos De la Cruz
+                  Yan Carlos De la Cruz
                 </h4>
                 <div className="space-y-3.5 pl-3">
                   <div className="flex items-start gap-3">
@@ -185,7 +185,7 @@ export function Contact() {
                   required
                 />
               </div>
-              
+
               <Button
                 type="submit"
                 className="w-full bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg transition-transform hover:scale-[1.02] active:scale-95 duration-200"

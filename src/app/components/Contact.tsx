@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Globe, MessageCircle } from "lucide-react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
@@ -25,44 +25,80 @@ export function Contact() {
               Información de Contacto
             </h3>
             <div className="space-y-6 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                  <Phone className="w-6 h-6 text-accent-foreground" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary dark:text-foreground mb-1">Teléfono</h4>
-                  <p className="text-secondary dark:text-muted-foreground font-medium text-sm">+1 (809) 555-0100</p>
-                  <p className="text-secondary dark:text-muted-foreground font-medium text-sm">+1 (829) 555-0200</p>
+              {/* Representante 1: Albert */}
+              <div className="bg-muted/50 dark:bg-slate-900/40 p-5 rounded-2xl border border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <h4 className="font-bold text-primary dark:text-foreground text-lg mb-3 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 bg-accent rounded-full animate-pulse"></span>
+                  Albert Castillo
+                </h4>
+                <div className="space-y-3.5 pl-3">
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-secondary dark:text-muted-foreground font-semibold text-sm">
+                        +1 (829) 554-4783
+                      </p>
+                      <p className="text-xs text-secondary/70 dark:text-muted-foreground/60 font-medium">
+                        Llamadas y WhatsApp (Activo)
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-secondary dark:text-muted-foreground font-semibold text-sm">
+                        +34 698 543 478
+                      </p>
+                      <p className="text-xs text-secondary/70 dark:text-muted-foreground/60 font-medium">
+                        Solo WhatsApp (Internacional)
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                    <p className="text-secondary dark:text-muted-foreground text-sm font-semibold break-all">
+                      Albertfranciscocastilloramirez@gmail.com
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                  <Mail className="w-6 h-6 text-accent-foreground" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary dark:text-foreground mb-1">Email</h4>
-                  <p className="text-secondary dark:text-muted-foreground font-medium text-sm">contacto@zentrixindustrial.com</p>
-                  <p className="text-secondary dark:text-muted-foreground font-medium text-sm">ventas@zentrixindustrial.com</p>
+
+              {/* Representante 2: Yancarlos */}
+              <div className="bg-muted/50 dark:bg-slate-900/40 p-5 rounded-2xl border border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <h4 className="font-bold text-primary dark:text-foreground text-lg mb-3 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 bg-accent rounded-full animate-pulse"></span>
+                  Yancarlos De la Cruz
+                </h4>
+                <div className="space-y-3.5 pl-3">
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-secondary dark:text-muted-foreground font-semibold text-sm">
+                        +34 671 166 201
+                      </p>
+                      <p className="text-xs text-secondary/70 dark:text-muted-foreground/60 font-medium">
+                        Solo WhatsApp (Internacional)
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                    <p className="text-secondary dark:text-muted-foreground text-sm font-semibold break-all">
+                      Delacruz-yancarlos@hotmail.com
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                  <MapPin className="w-6 h-6 text-accent-foreground" />
+
+              {/* Ubicación y Cobertura */}
+              <div className="flex items-start gap-4 bg-muted/30 dark:bg-slate-900/20 p-4 rounded-xl border border-border/20">
+                <div className="w-10 h-10 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <MapPin className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary dark:text-foreground mb-1">Ubicación</h4>
-                  <p className="text-secondary dark:text-muted-foreground font-bold text-sm">República Dominicana</p>
-                  <p className="text-secondary dark:text-muted-foreground text-xs font-medium">Cobertura nacional e internacional</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                  <Globe className="w-6 h-6 text-accent-foreground" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary dark:text-foreground mb-1">Cobertura</h4>
-                  <p className="text-secondary dark:text-muted-foreground font-medium text-sm">República Dominicana (Cobertura Nacional)</p>
-                  <p className="text-secondary dark:text-muted-foreground font-medium text-sm">Proyectos Internacionales</p>
+                  <h4 className="font-bold text-primary dark:text-foreground mb-0.5 text-sm">Ubicación y Cobertura</h4>
+                  <p className="text-secondary dark:text-muted-foreground font-semibold text-xs">República Dominicana</p>
+                  <p className="text-secondary dark:text-muted-foreground text-[11px] font-medium">Cobertura nacional y proyectos internacionales</p>
                 </div>
               </div>
             </div>
@@ -131,7 +167,7 @@ export function Contact() {
                   <option>Mantenimiento Industrial</option>
                   <option>Automatización Industrial</option>
                   <option>Robótica</option>
-                  <option>Energía Solar Fotovoltaica</option>
+                  <option>Energías Renovables</option>
                   <option>Climatización y Refrigeración</option>
                   <option>Instalaciones Eléctricas</option>
                   <option>Montaje de Maquinaria</option>

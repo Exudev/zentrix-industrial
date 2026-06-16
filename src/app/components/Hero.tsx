@@ -47,9 +47,9 @@ export function Hero() {
           </Button>
           <Button
             asChild
-            variant="outline"
+            variant="ghost"
             size="lg"
-            className="border-2 border-accent text-white hover:bg-accent hover:text-accent-foreground backdrop-blur-sm font-bold hover:scale-[1.05] active:scale-95 transition-all duration-300 h-14 px-8 rounded-xl"
+            className="border-2 border-accent text-white hover:bg-accent hover:text-accent-foreground backdrop-blur-sm font-bold hover:scale-[1.05] active:scale-95 transition-all duration-300 h-14 px-8 rounded-xl cursor-pointer"
           >
             <a href="#servicios">
               Ver Servicios

@@ -6,7 +6,7 @@ export function Maintenance() {
   const plans = [
     {
       name: "Plan Básico",
-      price: "Desde $2,500 USD/mes",
+      description: "Soporte preventivo mensual para garantizar el funcionamiento básico y la seguridad.",
       features: [
         "Mantenimiento preventivo mensual",
         "Inspecciones de seguridad",
@@ -18,7 +18,7 @@ export function Maintenance() {
     },
     {
       name: "Plan Profesional",
-      price: "Desde $4,500 USD/mes",
+      description: "Monitoreo quincenal y soporte 24/7 diseñado para medianas empresas con producción continua.",
       features: [
         "Mantenimiento preventivo quincenal",
         "Mantenimiento predictivo",
@@ -32,7 +32,7 @@ export function Maintenance() {
     },
     {
       name: "Plan Enterprise",
-      price: "Personalizado",
+      description: "Técnico dedicado en sitio y respuesta inmediata para grandes industrias y alta exigencia.",
       features: [
         "Mantenimiento preventivo semanal",
         "Mantenimiento predictivo avanzado",
@@ -100,11 +100,11 @@ export function Maintenance() {
                     {index + 1}
                   </span>
                 </div>
-                <h3 className={`text-2xl font-bold mb-2 ${plan.featured ? "text-primary dark:text-foreground" : "text-primary dark:text-foreground"}`}>
+                <h3 className={`text-2xl font-bold mb-2 text-primary dark:text-foreground`}>
                   {plan.name}
                 </h3>
-                <p className={`text-3xl font-extrabold mb-6 ${plan.featured ? "text-primary dark:text-accent" : "text-accent"}`}>
-                  {plan.price}
+                <p className={`text-sm mb-6 ${plan.featured ? "text-primary/80 dark:text-muted-foreground" : "text-secondary dark:text-muted-foreground"}`}>
+                  {plan.description}
                 </p>
                 <ul className="space-y-3.5 mb-8 border-t border-black/10 dark:border-white/10 pt-6">
                   {plan.features.map((feature, idx) => (
@@ -118,13 +118,14 @@ export function Maintenance() {
 
               <CardFooter className="p-0 mt-auto pt-6">
                 <Button
-                  className={`w-full py-6 rounded-xl font-bold shadow-md hover:shadow-lg transition-all duration-200 ${
+                  asChild
+                  className={`w-full py-6 rounded-xl font-bold shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer ${
                     plan.featured
                       ? "bg-primary dark:bg-accent text-primary-foreground dark:text-accent-foreground hover:bg-primary/95 dark:hover:bg-accent/90"
                       : "bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white"
                   }`}
                 >
-                  Contratar Plan
+                  <a href="#contacto">Solicitar Cotización</a>
                 </Button>
               </CardFooter>
             </Card>

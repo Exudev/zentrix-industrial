@@ -24,9 +24,9 @@ export function Services() {
     },
     {
       icon: Sun,
-      title: "Energía Solar Fotovoltaica",
-      description: "Instalación de sistemas solares para reducir costos energéticos y ser sostenible.",
-      features: ["Paneles solares", "Inversores", "Instalación completa"],
+      title: "Energías Renovables",
+      description: "Instalación de sistemas solares fotovoltaicos y soluciones sostenibles, incluyendo el montaje de cargadores eléctricos para vehículos en plazas privadas de garaje.",
+      features: ["Paneles solares e inversores", "Instalación y puesta en marcha", "Cargadores eléctricos en plazas privadas de garaje"],
     },
     {
       icon: Snowflake,

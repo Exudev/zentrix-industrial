@@ -1,4 +1,5 @@
 import { Clock, CheckCircle2, AlertTriangle, PhoneCall } from "lucide-react";
+import { Link } from "react-router";
 import { Card, CardContent, CardFooter } from "./ui/card";
 import { Button } from "./ui/button";
 
@@ -125,7 +126,7 @@ export function Maintenance() {
                       : "bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white"
                   }`}
                 >
-                  <a href="#contacto">Solicitar Cotización</a>
+                  <Link to="/contacto">Solicitar Cotización</Link>
                 </Button>
               </CardFooter>
             </Card>

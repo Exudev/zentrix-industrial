@@ -1,10 +1,11 @@
 import { ChevronRight } from "lucide-react";
+import { Link } from "react-router";
 import logoImage from "../../imports/logo.png";
 import { Button } from "./ui/button";
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative min-h-screen lg:h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-slate-950/70 z-10" />
       <img
         src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxpbmR1c3RyaWFsJTIwZmFjdG9yeSUyMG1hY2hpbmVyeXxlbnwxfHx8fDE3ODA4NjQ4NDB8MA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -12,7 +13,7 @@ export function Hero() {
         className="absolute inset-0 w-full h-full object-cover scale-105 animate-pulse-slow"
       />
 
-      <div className="relative z-20 text-center text-white px-4 max-w-5xl mx-auto pt-28">
+      <div className="relative z-20 text-center text-white px-4 max-w-5xl mx-auto pt-32 pb-12 lg:pt-0 lg:pb-0">
         <div className="mb-8">
           <div className="mx-auto mb-6 inline-block hover:scale-105 transition-transform duration-500">
             <img
@@ -40,10 +41,10 @@ export function Hero() {
             size="lg"
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-lg hover:shadow-accent/20 hover:scale-[1.05] active:scale-95 transition-all duration-300 h-14 px-8 rounded-xl"
           >
-            <a href="#contacto" className="flex items-center gap-2">
+            <Link to="/contacto" className="flex items-center gap-2">
               Solicitar Cotización
               <ChevronRight className="w-5 h-5" />
-            </a>
+            </Link>
           </Button>
           <Button
             asChild

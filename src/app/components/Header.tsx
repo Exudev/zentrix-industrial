@@ -1,10 +1,11 @@
 import { Menu, X, Sun, Moon, ArrowDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router";
 import logoImage from "../../imports/logo.png";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("inicio");
+  const location = useLocation();
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("theme") || "light";
@@ -23,66 +24,17 @@ export function Header() {
     }
   }, [theme]);
 
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "-25% 0px -55% 0px",
-      threshold: 0,
-    };
-
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-    const ids = [
-      "inicio",
-      "quienes-somos",
-      "servicios",
-      "proyectos",
-      "mantenimiento",
-      "empleo",
-      "contacto",
-    ];
-
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setActiveSection("inicio");
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      ids.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) observer.unobserve(el);
-      });
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   const navItems = [
-    { name: "Inicio", href: "#inicio" },
-    { name: "Quiénes Somos", href: "#quienes-somos" },
-    { name: "Servicios", href: "#servicios" },
-    { name: "Proyectos", href: "#proyectos" },
-    { name: "Mantenimiento", href: "#mantenimiento" },
-    { name: "Empleo", href: "#empleo" },
-    { name: "Contacto", href: "#contacto" },
+    { name: "Inicio", path: "/" },
+    { name: "Quiénes Somos", path: "/quienes-somos" },
+    { name: "Servicios", path: "/servicios" },
+    { name: "Proyectos", path: "/proyectos" },
+    { name: "Mantenimiento", path: "/mantenimiento" },
+    { name: "Contacto", path: "/contacto" },
   ];
 
   return (
@@ -90,20 +42,22 @@ export function Header() {
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between animate-fade-in">
           <div className="flex items-center space-x-2 flex-shrink-0">
-            <img
-              src={logoImage}
-              alt="Zentrix Industrial Logo"
-              className="h-14 w-14 object-contain flex-shrink-0 dark:brightness-0 dark:invert transition-all duration-300"
-            />
+            <Link to="/">
+              <img
+                src={logoImage}
+                alt="Zentrix Industrial Logo"
+                className="h-14 w-14 object-contain flex-shrink-0 dark:brightness-0 dark:invert transition-all duration-300"
+              />
+            </Link>
           </div>
 
           <div className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => {
-              const isActive = activeSection === item.href.slice(1);
+              const isActive = location.pathname === item.path;
               return (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.path}
                   className={`flex items-center gap-1 px-1 py-1.5 rounded transition-all duration-200 text-sm font-semibold border-b-2 hover:text-accent dark:hover:text-accent ${
                     isActive
                       ? "text-accent border-accent dark:text-accent"
@@ -114,7 +68,7 @@ export function Header() {
                   {isActive && (
                     <ArrowDown className="w-3.5 h-3.5 text-accent animate-bounce" />
                   )}
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -149,11 +103,11 @@ export function Header() {
           <div className="lg:hidden mt-4 pb-4 animate-slide-down">
             <div className="flex flex-col space-y-2 border-t border-border/40 pt-4">
               {navItems.map((item) => {
-                const isActive = activeSection === item.href.slice(1);
+                const isActive = location.pathname === item.path;
                 return (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.path}
                     className={`flex items-center justify-between py-2 px-3 rounded-md text-sm font-medium transition-all ${
                       isActive
                         ? "bg-accent/10 text-accent font-bold"
@@ -163,7 +117,7 @@ export function Header() {
                   >
                     <span>{item.name}</span>
                     {isActive && <ArrowDown className="w-4 h-4 text-accent" />}
-                  </a>
+                  </Link>
                 );
               })}
             </div>

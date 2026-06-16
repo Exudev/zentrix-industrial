@@ -1,8 +1,15 @@
 import { Wrench, Cog, Bot, Sun, Snowflake, Zap, Settings, Stethoscope, Cable, ShoppingCart } from "lucide-react";
+import { Link } from "react-router";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
 import { Button } from "./ui/button";
 
-export function Services() {
+interface ServicesProps {
+  limit?: number;
+  showCTA?: boolean;
+  isSubPage?: boolean;
+}
+
+export function Services({ limit, showCTA = true, isSubPage = false }: ServicesProps = {}) {
   const services = [
     {
       icon: Wrench,
@@ -66,21 +73,25 @@ export function Services() {
     },
   ];
 
+  const displayedServices = limit ? services.slice(0, limit) : services;
+
   return (
-    <section id="servicios" className="py-20 bg-muted dark:bg-slate-900/40 transition-colors duration-300">
+    <section id="servicios" className={`${isSubPage ? "py-12" : "py-20"} bg-muted dark:bg-slate-900/40 transition-colors duration-300`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary dark:text-foreground mb-4">
-            Nuestros Servicios
-          </h2>
-          <p className="text-xl text-secondary dark:text-muted-foreground max-w-3xl mx-auto">
-            Ofrecemos soluciones integrales para todas las necesidades de tu industria,
-            desde el diseño hasta la implementación y mantenimiento.
-          </p>
-        </div>
+        {!isSubPage && (
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary dark:text-foreground mb-4">
+              Nuestros Servicios
+            </h2>
+            <p className="text-xl text-secondary dark:text-muted-foreground max-w-3xl mx-auto">
+              Ofrecemos soluciones inteligentes para todas las necesidades de tu industria,
+              desde el diseño hasta la implementación y mantenimiento.
+            </p>
+          </div>
+        )}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {services.map((service, index) => (
+          {displayedServices.map((service, index) => (
             <Card
               key={index}
               className="bg-white dark:bg-card border-none dark:border dark:border-border/40 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
@@ -110,22 +121,24 @@ export function Services() {
           ))}
         </div>
 
-        <Card className="mt-16 bg-gradient-to-r from-primary to-accent dark:from-slate-950 dark:to-slate-900 border-none text-white dark:text-foreground p-8 md:p-12 text-center shadow-xl hover:shadow-2xl transition-all duration-300">
-          <CardContent className="p-0">
-            <h3 className="text-3xl font-bold mb-4 text-white dark:text-foreground">¿Tienes una idea? Nosotros la hacemos realidad.</h3>
-            <p className="text-xl mb-6 text-white/90 dark:text-muted-foreground">
-              Tu producción no puede detenerse. Nosotros tampoco.
-            </p>
-            <Button
-              asChild
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8 py-3 rounded-lg shadow-lg"
-            >
-              <a href="#contacto">
-                Solicitar Cotización
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
+        {showCTA && (
+          <Card className="mt-16 bg-gradient-to-r from-primary to-accent dark:from-slate-950 dark:to-slate-900 border-none text-white dark:text-foreground p-8 md:p-12 text-center shadow-xl hover:shadow-2xl transition-all duration-300">
+            <CardContent className="p-0">
+              <h3 className="text-3xl font-bold mb-4 text-white dark:text-foreground">¿Tienes una idea? Nosotros la hacemos realidad.</h3>
+              <p className="text-xl mb-6 text-white/90 dark:text-muted-foreground">
+                Tu producción no puede detenerse. Nosotros tampoco.
+              </p>
+              <Button
+                asChild
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8 py-3 rounded-lg shadow-lg"
+              >
+                <Link to="/contacto">
+                  Solicitar Cotización
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
+        )}
       </div>
     </section>
   );

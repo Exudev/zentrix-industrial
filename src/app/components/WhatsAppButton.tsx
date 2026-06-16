@@ -18,7 +18,7 @@ export function WhatsAppButton() {
       badge: "España",
     },
     {
-      name: "Yancarlos De la Cruz (Internacional)",
+      name: "Yan Carlos De la Cruz (Internacional)",
       info: "Solo WhatsApp",
       url: "https://wa.me/34671166201",
       badge: "España",
@@ -78,9 +78,8 @@ export function WhatsAppButton() {
       {/* Floating Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-105 active:scale-95 group focus:outline-none relative cursor-pointer ${
-          !isOpen ? "animate-pulse" : ""
-        }`}
+        className={`bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-105 active:scale-95 group focus:outline-none relative cursor-pointer ${!isOpen ? "animate-pulse" : ""
+          }`}
         aria-label="Contactar por WhatsApp"
       >
         {isOpen ? (

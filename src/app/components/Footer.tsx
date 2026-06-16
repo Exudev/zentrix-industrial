@@ -1,4 +1,5 @@
 import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Link } from "react-router";
 import logoImage from "../../imports/logo.png";
 
 export function Footer() {
@@ -8,11 +9,13 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="mb-4">
-              <img
-                src={logoImage}
-                alt="Zentrix Industrial Logo"
-                className="h-20 w-20 object-contain brightness-0 invert"
-              />
+              <Link to="/">
+                <img
+                  src={logoImage}
+                  alt="Zentrix Industrial Logo"
+                  className="h-20 w-20 object-contain brightness-0 invert"
+                />
+              </Link>
             </div>
             <p className="text-white/80 mb-4">
               Soluciones inteligentes para una industria más eficiente.
@@ -36,21 +39,20 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-4">Servicios Principales</h4>
             <ul className="space-y-2 text-white/80 text-sm">
-              <li><a href="#servicios" className="hover:text-accent transition-colors">Mantenimiento Industrial</a></li>
-              <li><a href="#servicios" className="hover:text-accent transition-colors">Automatización Industrial</a></li>
-              <li><a href="#servicios" className="hover:text-accent transition-colors">Energías Renovables</a></li>
-              <li><a href="#servicios" className="hover:text-accent transition-colors">Instalaciones Eléctricas</a></li>
-              <li><a href="#servicios" className="hover:text-accent transition-colors">Robótica Industrial</a></li>
+              <li><Link to="/servicios" className="hover:text-accent transition-colors">Mantenimiento Industrial</Link></li>
+              <li><Link to="/servicios" className="hover:text-accent transition-colors">Automatización Industrial</Link></li>
+              <li><Link to="/servicios" className="hover:text-accent transition-colors">Energías Renovables</Link></li>
+              <li><Link to="/servicios" className="hover:text-accent transition-colors">Instalaciones Eléctricas</Link></li>
+              <li><Link to="/servicios" className="hover:text-accent transition-colors">Robótica Industrial</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-4">Empresa</h4>
             <ul className="space-y-2 text-white/80 text-sm">
-              <li><a href="#quienes-somos" className="hover:text-accent transition-colors">Quiénes Somos</a></li>
-              <li><a href="#proyectos" className="hover:text-accent transition-colors">Proyectos</a></li>
-              <li><a href="#mantenimiento" className="hover:text-accent transition-colors">Planes de Mantenimiento</a></li>
-              <li><a href="#empleo" className="hover:text-accent transition-colors">Trabaja con Nosotros</a></li>
+              <li><Link to="/quienes-somos" className="hover:text-accent transition-colors">Quiénes Somos</Link></li>
+              <li><Link to="/proyectos" className="hover:text-accent transition-colors">Proyectos</Link></li>
+              <li><Link to="/mantenimiento" className="hover:text-accent transition-colors">Planes de Mantenimiento</Link></li>
             </ul>
           </div>
 
@@ -64,7 +66,7 @@ export function Footer() {
                   <p className="text-xs text-white/70">+1 (829) 554-4783 (Llamadas & WA)</p>
                   <p className="font-semibold text-white mt-1.5">WhatsApp (Internacional):</p>
                   <p className="text-xs text-white/70">Albert: +34 698 543 478</p>
-                  <p className="text-xs text-white/70">Yancarlos: +34 671 166 201</p>
+                  <p className="text-xs text-white/70">Yan Carlos: +34 671 166 201</p>
                 </div>
               </li>
               <li className="flex items-start gap-2">

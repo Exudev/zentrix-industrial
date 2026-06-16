@@ -1,7 +1,6 @@
 import { HashRouter, Routes, Route, useLocation, Link } from "react-router";
 import { useEffect } from "react";
 import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Services } from "./components/Services";
 import { ServicesPage } from "./components/ServicesPage";
@@ -43,16 +42,18 @@ export default function App() {
             <Route
               path="/"
               element={
-                <>
-                  <Hero />
+                <div className="pt-16 bg-muted dark:bg-slate-900/40 transition-colors duration-300">
                   <Services limit={4} showCTA={false} />
-                  <div className="bg-muted dark:bg-slate-900/40 pb-16 text-center transition-colors duration-300">
-                    <Button asChild size="lg" className="bg-primary hover:bg-primary/95 text-white dark:bg-accent dark:hover:bg-accent/90 dark:text-accent-foreground font-bold px-8 py-4 rounded-xl shadow-lg transition-transform hover:scale-[1.02] active:scale-95 duration-200 cursor-pointer">
+                  <div className="bg-muted dark:bg-slate-900/40 pb-16 text-center transition-colors duration-300 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8 py-4 rounded-xl shadow-lg transition-transform hover:scale-[1.02] active:scale-95 duration-200 cursor-pointer">
                       <Link to="/servicios">Ver Todos los Servicios</Link>
+                    </Button>
+                    <Button asChild variant="ghost" size="lg" className="border-2 border-accent text-slate-900 dark:text-white hover:bg-accent hover:text-accent-foreground font-bold px-8 py-4 rounded-xl shadow-lg transition-transform hover:scale-[1.02] active:scale-95 duration-200 cursor-pointer">
+                      <Link to="/contacto">Solicitar Cotización</Link>
                     </Button>
                   </div>
                   <Testimonials />
-                </>
+                </div>
               }
             />
             <Route path="/quienes-somos" element={<About />} />

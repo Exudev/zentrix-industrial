@@ -1,11 +1,11 @@
 import { Menu, X, Sun, Moon, ArrowDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router";
+import { Link } from "react-router";
 import logoImage from "../../imports/logo.png";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState("inicio");
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("theme") || "light";
@@ -24,17 +24,50 @@ export function Header() {
     }
   }, [theme]);
 
+  // Scroll spy IntersectionObserver logic
+  useEffect(() => {
+    const sectionIds = ["inicio", "quienes-somos", "servicios", "proyectos", "mantenimiento", "contacto"];
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -50% 0px", // Trigger when section occupies the upper-middle portion of the screen
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      sectionIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   const navItems = [
-    { name: "Inicio", path: "/" },
-    { name: "Quiénes Somos", path: "/quienes-somos" },
-    { name: "Servicios", path: "/servicios" },
-    { name: "Proyectos", path: "/proyectos" },
-    { name: "Mantenimiento", path: "/mantenimiento" },
-    { name: "Contacto", path: "/contacto" },
+    { name: "Inicio", id: "inicio", path: "/#inicio" },
+    { name: "Quiénes Somos", id: "quienes-somos", path: "/#quienes-somos" },
+    { name: "Servicios", id: "servicios", path: "/#servicios" },
+    { name: "Proyectos", id: "proyectos", path: "/#proyectos" },
+    { name: "Mantenimiento", id: "mantenimiento", path: "/#mantenimiento" },
+    { name: "Contacto", id: "contacto", path: "/#contacto" },
   ];
 
   return (
@@ -42,7 +75,7 @@ export function Header() {
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between animate-fade-in">
           <div className="flex items-center space-x-2 flex-shrink-0">
-            <Link to="/">
+            <Link to="/#inicio">
               <img
                 src={logoImage}
                 alt="Zentrix Industrial Logo"
@@ -53,7 +86,7 @@ export function Header() {
 
           <div className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => {
-              const isActive = location.pathname === item.path;
+              const isActive = activeSection === item.id;
               return (
                 <Link
                   key={item.name}
@@ -103,7 +136,7 @@ export function Header() {
           <div className="lg:hidden mt-4 pb-4 animate-slide-down">
             <div className="flex flex-col space-y-2 border-t border-border/40 pt-4">
               {navItems.map((item) => {
-                const isActive = location.pathname === item.path;
+                const isActive = activeSection === item.id;
                 return (
                   <Link
                     key={item.name}
@@ -127,3 +160,4 @@ export function Header() {
     </header>
   );
 }
+

@@ -41,10 +41,10 @@ export function Hero() {
             size="lg"
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-lg hover:shadow-accent/20 hover:scale-[1.05] active:scale-95 transition-all duration-300 h-14 px-8 rounded-xl"
           >
-            <a href="#servicios" className="flex items-center gap-2">
+            <Link to="/#servicios" className="flex items-center gap-2">
               Ver Servicios
               <ChevronRight className="w-5 h-5" />
-            </a>
+            </Link>
           </Button>
           <Button
             asChild
@@ -52,7 +52,7 @@ export function Hero() {
             size="lg"
             className="border-2 border-accent text-white hover:bg-accent hover:text-accent-foreground backdrop-blur-sm font-bold hover:scale-[1.05] active:scale-95 transition-all duration-300 h-14 px-8 rounded-xl cursor-pointer"
           >
-            <Link to="/contacto">
+            <Link to="/#contacto">
               Solicitar Cotización
             </Link>
           </Button>

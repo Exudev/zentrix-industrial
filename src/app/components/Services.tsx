@@ -140,7 +140,7 @@ export function Services({ limit, showCTA = true, isSubPage = false }: ServicesP
                 asChild
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8 py-3 rounded-lg shadow-lg"
               >
-                <Link to="/contacto">
+                <Link to="/#contacto">
                   Solicitar Cotización
                 </Link>
               </Button>

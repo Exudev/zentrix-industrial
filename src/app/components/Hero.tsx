@@ -1,6 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
-import logoImage from "../../imports/logo.png";
+import logoImage from "../../imports/nameless-logo.png";
 import { Button } from "./ui/button";
 
 export function Hero() {
@@ -19,7 +19,7 @@ export function Hero() {
             <img
               src={logoImage}
               alt="Zentrix Industrial Logo"
-              className="h-28 w-28 md:h-40 md:w-40 object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] dark:brightness-0 dark:invert transition-all duration-300"
+              className="h-36 w-36 md:h-56 md:w-56 object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] dark:grayscale dark:invert dark:contrast-200 dark:brightness-125 transition-all duration-300"
             />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-white">

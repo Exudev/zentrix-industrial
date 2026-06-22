@@ -61,7 +61,7 @@ export function Experience() {
   return (
     <section
       id="experiencia"
-      className="py-24 bg-background border-t border-border/30 transition-colors duration-300 overflow-hidden"
+      className="pt-24 pb-12 bg-background border-t border-border/30 transition-colors duration-300 overflow-hidden"
     >
       <div className="container mx-auto px-4">
         {/* Section Header */}
@@ -100,11 +100,11 @@ export function Experience() {
                 <span className="absolute top-4 left-4 text-[10px] uppercase font-bold tracking-widest bg-accent text-accent-foreground px-2.5 py-1 rounded-md shadow-md">
                   {exp.sector}
                 </span>
+              </div>
 
-                {/* Icon Circle */}
-                <div className="absolute -bottom-6 right-6 w-12 h-12 rounded-xl bg-primary dark:bg-accent text-white dark:text-accent-foreground flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform duration-300 border border-white/10">
-                  <exp.icon className="w-6 h-6" />
-                </div>
+              {/* Icon Circle (Outside the overflow-hidden image container to prevent clipping) */}
+              <div className="absolute top-[232px] right-6 w-12 h-12 rounded-xl bg-accent text-accent-foreground flex items-center justify-center shadow-lg shadow-accent/20 transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-300 border border-accent/20 z-10">
+                <exp.icon className="w-6 h-6" />
               </div>
 
               {/* Text content */}

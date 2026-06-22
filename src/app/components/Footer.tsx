@@ -1,6 +1,6 @@
-import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { Link } from "react-router";
-import logoImage from "../../imports/logo.png";
+import logoImage from "../../imports/nameless-logo.png";
 
 export function Footer() {
   return (
@@ -13,7 +13,7 @@ export function Footer() {
                 <img
                   src={logoImage}
                   alt="Zentrix Industrial Logo"
-                  className="h-20 w-20 object-contain brightness-0 invert"
+                  className="h-28 w-28 object-contain grayscale invert contrast-200 brightness-125"
                 />
               </Link>
             </div>
@@ -21,9 +21,6 @@ export function Footer() {
               Soluciones inteligentes para una industria más eficiente.
             </p>
             <div className="flex gap-3">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
               <a href="https://www.facebook.com/people/Zentrix-Industrial/61590676780331/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
@@ -95,17 +92,6 @@ export function Footer() {
         <div className="border-t border-white/20 pt-8 text-center text-white/60 text-sm">
           <p>&copy; 2026 Zentrix Industrial. Todos los derechos reservados.</p>
           <p className="mt-2 text-xs">República Dominicana | Proyectos Internacionales</p>
-          <p className="mt-3 text-xs text-white/40">
-            Hecho por{" "}
-            <a
-              href="https://exudev.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:underline font-semibold transition-all"
-            >
-              exudev
-            </a>
-          </p>
         </div>
       </div>
     </footer>

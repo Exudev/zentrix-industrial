@@ -26,7 +26,7 @@ export function Header() {
 
   // Scroll spy IntersectionObserver logic
   useEffect(() => {
-    const sectionIds = ["inicio", "quienes-somos", "servicios", "proyectos", "mantenimiento", "contacto"];
+    const sectionIds = ["inicio", "quienes-somos", "servicios", "mantenimiento", "contacto"];
     
     const observerOptions = {
       root: null,
@@ -65,7 +65,6 @@ export function Header() {
     { name: "Inicio", id: "inicio", path: "/#inicio" },
     { name: "Quiénes Somos", id: "quienes-somos", path: "/#quienes-somos" },
     { name: "Servicios", id: "servicios", path: "/#servicios" },
-    { name: "Proyectos", id: "proyectos", path: "/#proyectos" },
     { name: "Mantenimiento", id: "mantenimiento", path: "/#mantenimiento" },
     { name: "Contacto", id: "contacto", path: "/#contacto" },
   ];

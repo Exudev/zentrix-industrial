@@ -51,7 +51,6 @@ export function Footer() {
             <h4 className="font-bold mb-4">Empresa</h4>
             <ul className="space-y-2 text-white/80 text-sm">
               <li><Link to="/quienes-somos" className="hover:text-accent transition-colors">Quiénes Somos</Link></li>
-              <li><Link to="/proyectos" className="hover:text-accent transition-colors">Proyectos</Link></li>
               <li><Link to="/mantenimiento" className="hover:text-accent transition-colors">Planes de Mantenimiento</Link></li>
             </ul>
           </div>

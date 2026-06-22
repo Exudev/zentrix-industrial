@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Services } from "./components/Services";
 import { Maintenance } from "./components/Maintenance";
+import { Experience } from "./components/Experience";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
@@ -42,6 +43,7 @@ export default function App() {
                 <div className="bg-muted dark:bg-slate-900/40 transition-colors duration-300">
                   <Hero />
                   <About />
+                  <Experience />
                   <Services />
                   <Maintenance />
                   <Contact />

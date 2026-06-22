@@ -24,13 +24,13 @@ export function Footer() {
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+              <a href="https://www.facebook.com/people/Zentrix-Industrial/61590676780331/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+              <a href="https://www.instagram.com/zentrix_industrial/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/18295544783" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors" title="Contactar por WhatsApp">
+              <a href="https://wa.link/zmvxzy" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors" title="Contactar por WhatsApp">
                 <MessageCircle className="w-5 h-5" />
               </a>
             </div>
@@ -62,10 +62,16 @@ export function Footer() {
                 <Phone className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-semibold text-white">Albert Castillo (Nacional):</p>
-                  <p className="text-xs text-white/70">+1 (829) 554-4783 (Llamadas & WA)</p>
+                  <a href="https://wa.link/zmvxzy" target="_blank" rel="noopener noreferrer" className="text-xs text-white/70 hover:text-accent transition-colors block">
+                    +1 (829) 554-4783 (Llamadas & WhatsApp)
+                  </a>
                   <p className="font-semibold text-white mt-1.5">WhatsApp (Internacional):</p>
-                  <p className="text-xs text-white/70">Albert: +34 698 543 478</p>
-                  <p className="text-xs text-white/70">Yan Carlos: +34 671 166 201</p>
+                  <a href="https://wa.link/zmvxzy" target="_blank" rel="noopener noreferrer" className="text-xs text-white/70 hover:text-accent transition-colors block">
+                    Albert: +34 698 543 478
+                  </a>
+                  <a href="https://wa.link/zmvxzy" target="_blank" rel="noopener noreferrer" className="text-xs text-white/70 hover:text-accent transition-colors block">
+                    Yan Carlos: +34 671 166 201
+                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-2">

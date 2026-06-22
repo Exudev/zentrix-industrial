@@ -6,6 +6,37 @@ import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 
 export function Contact() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const company = formData.get("company") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const service = formData.get("service") as string;
+    const description = formData.get("description") as string;
+
+    const subject = `Solicitud de Cotización: ${service} - ${company}`;
+    const body = `Hola equipo de Zentrix Industrial,
+
+Se ha recibido una nueva solicitud de cotización desde el sitio web:
+
+• Nombre completo: ${name}
+• Empresa: ${company}
+• Correo Electrónico: ${email}
+• Teléfono: ${phone}
+• Servicio Requerido: ${service}
+
+• Descripción del Proyecto:
+${description}
+
+Quedo a la espera de su respuesta.
+Saludos cordiales.`;
+
+    const mailtoUrl = `mailto:Albertfranciscocastilloramirez@gmail.com,Delacruz-yancarlos@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
+
   return (
     <section id="contacto" className="py-20 bg-background transition-colors duration-300">
       <div className="container mx-auto px-4">
@@ -43,17 +74,22 @@ export function Contact() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <MessageCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <a 
+                    href="https://wa.link/zmvxzy" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-start gap-3 hover:text-accent dark:hover:text-accent transition-colors group/item"
+                  >
+                    <MessageCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
                     <div>
-                      <p className="text-secondary dark:text-muted-foreground font-semibold text-sm">
+                      <p className="text-secondary dark:text-muted-foreground font-semibold text-sm group-hover/item:text-accent transition-colors">
                         +34 698 543 478
                       </p>
                       <p className="text-xs text-secondary/70 dark:text-muted-foreground/60 font-medium">
-                        Solo WhatsApp (Internacional)
+                        Solo WhatsApp (Internacional) - Contactar
                       </p>
                     </div>
-                  </div>
+                  </a>
                   <div className="flex items-start gap-3">
                     <Mail className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                     <p className="text-secondary dark:text-muted-foreground text-sm font-semibold break-all">
@@ -70,17 +106,22 @@ export function Contact() {
                   Yan Carlos De la Cruz
                 </h4>
                 <div className="space-y-3.5 pl-3">
-                  <div className="flex items-start gap-3">
-                    <MessageCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <a 
+                    href="https://wa.link/zmvxzy" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-start gap-3 hover:text-accent dark:hover:text-accent transition-colors group/item"
+                  >
+                    <MessageCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
                     <div>
-                      <p className="text-secondary dark:text-muted-foreground font-semibold text-sm">
+                      <p className="text-secondary dark:text-muted-foreground font-semibold text-sm group-hover/item:text-accent transition-colors">
                         +34 671 166 201
                       </p>
                       <p className="text-xs text-secondary/70 dark:text-muted-foreground/60 font-medium">
-                        Solo WhatsApp (Internacional)
+                        Solo WhatsApp (Internacional) - Contactar
                       </p>
                     </div>
-                  </div>
+                  </a>
                   <div className="flex items-start gap-3">
                     <Mail className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                     <p className="text-secondary dark:text-muted-foreground text-sm font-semibold break-all">
@@ -119,11 +160,15 @@ export function Contact() {
             <h3 className="text-2xl font-bold text-primary dark:text-foreground mb-6">
               Formulario de Cotización
             </h3>
-            <form className="space-y-5">
+            <form 
+              onSubmit={handleSubmit} 
+              className="space-y-5"
+            >
               <div>
                 <Label htmlFor="name" className="text-primary dark:text-foreground mb-2 block font-semibold text-sm">Nombre *</Label>
                 <Input
                   id="name"
+                  name="name"
                   type="text"
                   className="w-full px-4 py-3 rounded-xl border border-border dark:border-border/30 bg-input-background dark:bg-slate-900/60 focus-visible:ring-accent"
                   placeholder="Tu nombre completo"
@@ -134,6 +179,7 @@ export function Contact() {
                 <Label htmlFor="company" className="text-primary dark:text-foreground mb-2 block font-semibold text-sm">Empresa *</Label>
                 <Input
                   id="company"
+                  name="company"
                   type="text"
                   className="w-full px-4 py-3 rounded-xl border border-border dark:border-border/30 bg-input-background dark:bg-slate-900/60 focus-visible:ring-accent"
                   placeholder="Nombre de tu empresa"
@@ -144,6 +190,7 @@ export function Contact() {
                 <Label htmlFor="email" className="text-primary dark:text-foreground mb-2 block font-semibold text-sm">Correo Electrónico *</Label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   className="w-full px-4 py-3 rounded-xl border border-border dark:border-border/30 bg-input-background dark:bg-slate-900/60 focus-visible:ring-accent"
                   placeholder="tu@email.com"
@@ -154,6 +201,7 @@ export function Contact() {
                 <Label htmlFor="phone" className="text-primary dark:text-foreground mb-2 block font-semibold text-sm">Teléfono *</Label>
                 <Input
                   id="phone"
+                  name="phone"
                   type="tel"
                   className="w-full px-4 py-3 rounded-xl border border-border dark:border-border/30 bg-input-background dark:bg-slate-900/60 focus-visible:ring-accent"
                   placeholder="+1 (809) 555-0000"
@@ -162,7 +210,10 @@ export function Contact() {
               </div>
               <div>
                 <Label className="block text-primary dark:text-foreground mb-2 font-semibold text-sm">Servicio Requerido *</Label>
-                <select className="w-full px-4 py-3 rounded-xl border border-border dark:border-border/30 bg-input-background dark:bg-slate-900/60 focus:outline-none focus:ring-2 focus:ring-accent text-foreground dark:text-muted-foreground text-sm">
+                <select 
+                  name="service"
+                  className="w-full px-4 py-3 rounded-xl border border-border dark:border-border/30 bg-input-background dark:bg-slate-900/60 focus:outline-none focus:ring-2 focus:ring-accent text-foreground dark:text-muted-foreground text-sm"
+                >
                   <option>Selecciona un servicio</option>
                   <option>Mantenimiento Industrial</option>
                   <option>Automatización Industrial</option>
@@ -180,6 +231,7 @@ export function Contact() {
                 <Label htmlFor="description" className="text-primary dark:text-foreground mb-2 block font-semibold text-sm">Descripción del Proyecto *</Label>
                 <Textarea
                   id="description"
+                  name="description"
                   className="w-full px-4 py-3 rounded-xl border border-border dark:border-border/30 bg-input-background dark:bg-slate-900/60 focus-visible:ring-accent h-32 resize-none text-sm"
                   placeholder="Describe tu proyecto, necesidades o problema técnico..."
                   required

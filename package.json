@@ -6,7 +6,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "start": "vite preview --port ${PORT:-8080} --host"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

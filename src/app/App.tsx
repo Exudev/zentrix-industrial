@@ -12,7 +12,7 @@ import { WhatsAppButton } from "./components/WhatsAppButton";
 
 // Helper component to scroll to top or target section on route change
 function ScrollToTarget() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, search } = useLocation();
 
   useEffect(() => {
     if (hash) {
@@ -24,7 +24,7 @@ function ScrollToTarget() {
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [pathname, hash]);
+  }, [pathname, hash, search]);
 
   return null;
 }

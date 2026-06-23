@@ -126,7 +126,15 @@ export function Maintenance() {
                       : "bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white"
                   }`}
                 >
-                  <Link to={{ pathname: "/", hash: "#contacto", search: `?plan=${encodeURIComponent(plan.name)}` }}>Solicitar Cotización</Link>
+                  <Link 
+                    to={{ pathname: "/", hash: "#contacto", search: `?plan=${encodeURIComponent(plan.name)}` }}
+                    onClick={() => {
+                      const el = document.getElementById("contacto");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
+                    Solicitar Cotización
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>

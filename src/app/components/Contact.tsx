@@ -153,12 +153,6 @@ Saludos cordiales.`;
                       gerencia@zentrix-industrial.com
                     </a>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="text-xs font-semibold text-secondary/70 dark:text-muted-foreground/60 w-24 flex-shrink-0">Contabilidad:</div>
-                    <a href="mailto:contabilidad@zentrix-industrial.com" className="text-secondary dark:text-muted-foreground text-sm font-semibold hover:text-accent dark:hover:text-accent transition-colors break-all">
-                      contabilidad@zentrix-industrial.com
-                    </a>
-                  </div>
                 </div>
               </div>
 

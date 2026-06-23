@@ -80,9 +80,6 @@ export function Footer() {
                   <a href="mailto:gerencia@zentrix-industrial.com" className="hover:text-accent transition-colors block">
                     gerencia@zentrix-industrial.com
                   </a>
-                  <a href="mailto:contabilidad@zentrix-industrial.com" className="hover:text-accent transition-colors block">
-                    contabilidad@zentrix-industrial.com
-                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-2">
@@ -98,7 +95,7 @@ export function Footer() {
 
         <div className="border-t border-white/20 pt-8 text-center text-white/60 text-sm">
           <p>&copy; 2026 Zentrix Industrial. Todos los derechos reservados.</p>
-          <p className="mt-2 text-xs">República Dominicana | Proyectos Internacionales</p>
+          <p className="mt-2 text-xs">República Dominicana | Proyectos Nacionales e Internacionales</p>
         </div>
       </div>
     </footer>

@@ -28,11 +28,11 @@ export function Hero() {
         </div>
 
         <p className="text-xl md:text-3xl mb-3 font-light text-slate-100">
-          Soluciones inteligentes para una industria más eficiente.
+          Soluciones integrales para una indsustria más eficiente.
         </p>
 
         <p className="text-lg md:text-xl mb-8 font-medium text-accent">
-          República Dominicana | Proyectos Internacionales
+          República Dominicana | Proyectos Nacionales e Internacionales
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">

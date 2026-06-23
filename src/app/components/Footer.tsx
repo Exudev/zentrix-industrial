@@ -18,7 +18,7 @@ export function Footer() {
               </Link>
             </div>
             <p className="text-white/80 mb-4">
-              Soluciones inteligentes para una industria más eficiente.
+              Soluciones integrales para una industria más eficiente.
             </p>
             <div className="flex gap-3">
               <a href="https://www.facebook.com/people/Zentrix-Industrial/61590676780331/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
@@ -73,9 +73,16 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                <div className="break-all space-y-1">
-                  <p className="text-xs text-white/70">Albertfranciscocastilloramirez@gmail.com</p>
-                  <p className="text-xs text-white/70">Delacruz-yancarlos@hotmail.com</p>
+                <div className="break-all space-y-1 text-xs text-white/70">
+                  <a href="mailto:contacto@zentrix-industrial.com" className="hover:text-accent transition-colors block">
+                    contacto@zentrix-industrial.com
+                  </a>
+                  <a href="mailto:gerencia@zentrix-industrial.com" className="hover:text-accent transition-colors block">
+                    gerencia@zentrix-industrial.com
+                  </a>
+                  <a href="mailto:contabilidad@zentrix-industrial.com" className="hover:text-accent transition-colors block">
+                    contabilidad@zentrix-industrial.com
+                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-2">

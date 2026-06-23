@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -6,6 +8,19 @@ import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 
 export function Contact() {
+  const location = useLocation();
+  const [service, setService] = useState("Selecciona un servicio");
+  const [description, setDescription] = useState("");
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const plan = searchParams.get("plan");
+    if (plan) {
+      setService("Mantenimiento Industrial");
+      setDescription(`Hola, estoy interesado en solicitar una cotización para el ${plan}.`);
+    }
+  }, [location.search]);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -13,10 +28,10 @@ export function Contact() {
     const company = formData.get("company") as string;
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
-    const service = formData.get("service") as string;
-    const description = formData.get("description") as string;
+    const formService = formData.get("service") as string;
+    const formDescription = formData.get("description") as string;
 
-    const subject = `Solicitud de Cotización: ${service} - ${company}`;
+    const subject = `Solicitud de Cotización: ${formService} - ${company}`;
     const body = `Hola equipo de Zentrix Industrial,
 
 Se ha recibido una nueva solicitud de cotización desde el sitio web:
@@ -25,15 +40,15 @@ Se ha recibido una nueva solicitud de cotización desde el sitio web:
 • Empresa: ${company}
 • Correo Electrónico: ${email}
 • Teléfono: ${phone}
-• Servicio Requerido: ${service}
+• Servicio Requerido: ${formService}
 
 • Descripción del Proyecto:
-${description}
+${formDescription}
 
 Quedo a la espera de su respuesta.
 Saludos cordiales.`;
 
-    const mailtoUrl = `mailto:Albertfranciscocastilloramirez@gmail.com,Delacruz-yancarlos@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoUrl = `mailto:contacto@zentrix-industrial.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoUrl;
   };
 
@@ -90,12 +105,6 @@ Saludos cordiales.`;
                       </p>
                     </div>
                   </a>
-                  <div className="flex items-start gap-3">
-                    <Mail className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                    <p className="text-secondary dark:text-muted-foreground text-sm font-semibold break-all">
-                      Albertfranciscocastilloramirez@gmail.com
-                    </p>
-                  </div>
                 </div>
               </div>
 
@@ -122,11 +131,33 @@ Saludos cordiales.`;
                       </p>
                     </div>
                   </a>
+                </div>
+              </div>
+
+              {/* Correos Electrónicos Oficiales */}
+              <div className="bg-muted/50 dark:bg-slate-900/40 p-5 rounded-2xl border border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <h4 className="font-bold text-primary dark:text-foreground text-lg mb-3 flex items-center gap-2">
+                  <Mail className="w-5 h-5 text-accent flex-shrink-0" />
+                  Correos Electrónicos
+                </h4>
+                <div className="space-y-3.5 pl-3">
                   <div className="flex items-start gap-3">
-                    <Mail className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                    <p className="text-secondary dark:text-muted-foreground text-sm font-semibold break-all">
-                      Delacruz-yancarlos@hotmail.com
-                    </p>
+                    <div className="text-xs font-semibold text-secondary/70 dark:text-muted-foreground/60 w-24 flex-shrink-0">Contacto:</div>
+                    <a href="mailto:contacto@zentrix-industrial.com" className="text-secondary dark:text-muted-foreground text-sm font-semibold hover:text-accent dark:hover:text-accent transition-colors break-all">
+                      contacto@zentrix-industrial.com
+                    </a>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-xs font-semibold text-secondary/70 dark:text-muted-foreground/60 w-24 flex-shrink-0">Gerencia:</div>
+                    <a href="mailto:gerencia@zentrix-industrial.com" className="text-secondary dark:text-muted-foreground text-sm font-semibold hover:text-accent dark:hover:text-accent transition-colors break-all">
+                      gerencia@zentrix-industrial.com
+                    </a>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-xs font-semibold text-secondary/70 dark:text-muted-foreground/60 w-24 flex-shrink-0">Contabilidad:</div>
+                    <a href="mailto:contabilidad@zentrix-industrial.com" className="text-secondary dark:text-muted-foreground text-sm font-semibold hover:text-accent dark:hover:text-accent transition-colors break-all">
+                      contabilidad@zentrix-industrial.com
+                    </a>
                   </div>
                 </div>
               </div>
@@ -212,6 +243,8 @@ Saludos cordiales.`;
                 <Label className="block text-primary dark:text-foreground mb-2 font-semibold text-sm">Servicio Requerido *</Label>
                 <select 
                   name="service"
+                  value={service}
+                  onChange={(e) => setService(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl border border-border dark:border-border/30 bg-input-background dark:bg-slate-900/60 focus:outline-none focus:ring-2 focus:ring-accent text-foreground dark:text-muted-foreground text-sm"
                 >
                   <option>Selecciona un servicio</option>
@@ -232,6 +265,8 @@ Saludos cordiales.`;
                 <Textarea
                   id="description"
                   name="description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl border border-border dark:border-border/30 bg-input-background dark:bg-slate-900/60 focus-visible:ring-accent h-32 resize-none text-sm"
                   placeholder="Describe tu proyecto, necesidades o problema técnico..."
                   required

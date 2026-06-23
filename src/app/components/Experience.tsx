@@ -12,7 +12,7 @@ export function Experience() {
       title: "Líneas Automatizadas y Células Robotizadas",
       description:
         "Mantenimiento y control de procesos en líneas automatizadas con cintas transportadoras y células robotizadas encargadas de apilar el producto final.",
-      sector: "Automoción & Alimentario",
+      sector: "Manufactura",
       image: mantenimientoImage,
       icon: Cpu,
     },

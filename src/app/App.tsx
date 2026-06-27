@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, useLocation } from "react-router";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import { useEffect } from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
@@ -31,7 +31,7 @@ function ScrollToTarget() {
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTarget />
       <div className="min-h-screen animate-fade-in bg-background text-foreground transition-colors duration-300">
         <Header />
@@ -55,6 +55,6 @@ export default function App() {
         <Footer />
         <WhatsAppButton />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }

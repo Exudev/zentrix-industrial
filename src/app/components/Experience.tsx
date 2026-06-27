@@ -1,9 +1,9 @@
-import fundicionImage from "../../photos/fundicion-moldeo.jpeg";
-import granTonelajeImage from "../../photos/gran-tonelaje.jpeg";
-import mantenimientoImage from "../../photos/mantenimiento.jpeg";
-import motorReductorImage from "../../photos/motor-reductor.jpeg";
-import recirculacionImage from "../../photos/recirculacion.jpeg";
-import sistemaExtraccionImage from "../../photos/sistema-extraccion.jpeg";
+import fundicionImage from "../../photos/fundicion-moldeo.webp";
+import granTonelajeImage from "../../photos/gran-tonelaje.webp";
+import mantenimientoImage from "../../photos/mantenimiento.webp";
+import motorReductorImage from "../../photos/motor-reductor.webp";
+import recirculacionImage from "../../photos/recirculacion.webp";
+import sistemaExtraccionImage from "../../photos/sistema-extraccion.webp";
 import { Cpu, Wind, Flame, Cog, ShieldAlert, Wrench } from "lucide-react";
 
 export function Experience() {
@@ -91,6 +91,9 @@ export function Experience() {
                 <img
                   src={exp.image}
                   alt={exp.title}
+                  loading="lazy"
+                  width={900}
+                  height={675}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 {/* Visual Gradient Overlay */}

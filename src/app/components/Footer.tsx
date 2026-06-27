@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { Link } from "react-router";
-import logoImage from "../../imports/nameless-logo.png";
+import logoImage from "../../imports/nameless-logo.webp";
 
 export function Footer() {
   return (
@@ -13,6 +13,9 @@ export function Footer() {
                 <img
                   src={logoImage}
                   alt="Zentrix Industrial Logo"
+                  loading="lazy"
+                  width={500}
+                  height={438}
                   className="h-28 w-28 object-contain grayscale invert contrast-200 brightness-125"
                 />
               </Link>
@@ -36,19 +39,19 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-4">Servicios Principales</h4>
             <ul className="space-y-2 text-white/80 text-sm">
-              <li><Link to="/servicios" className="hover:text-accent transition-colors">Mantenimiento Industrial</Link></li>
-              <li><Link to="/servicios" className="hover:text-accent transition-colors">Automatización Industrial</Link></li>
-              <li><Link to="/servicios" className="hover:text-accent transition-colors">Energías Renovables</Link></li>
-              <li><Link to="/servicios" className="hover:text-accent transition-colors">Instalaciones Eléctricas</Link></li>
-              <li><Link to="/servicios" className="hover:text-accent transition-colors">Robótica Industrial</Link></li>
+              <li><Link to="/#servicios" className="hover:text-accent transition-colors">Mantenimiento Industrial</Link></li>
+              <li><Link to="/#servicios" className="hover:text-accent transition-colors">Automatización Industrial</Link></li>
+              <li><Link to="/#servicios" className="hover:text-accent transition-colors">Energías Renovables</Link></li>
+              <li><Link to="/#servicios" className="hover:text-accent transition-colors">Instalaciones Eléctricas</Link></li>
+              <li><Link to="/#servicios" className="hover:text-accent transition-colors">Robótica Industrial</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-4">Empresa</h4>
             <ul className="space-y-2 text-white/80 text-sm">
-              <li><Link to="/quienes-somos" className="hover:text-accent transition-colors">Quiénes Somos</Link></li>
-              <li><Link to="/mantenimiento" className="hover:text-accent transition-colors">Planes de Mantenimiento</Link></li>
+              <li><Link to="/#quienes-somos" className="hover:text-accent transition-colors">Quiénes Somos</Link></li>
+              <li><Link to="/#mantenimiento" className="hover:text-accent transition-colors">Planes de Mantenimiento</Link></li>
             </ul>
           </div>
 

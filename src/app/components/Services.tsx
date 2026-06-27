@@ -1,8 +1,7 @@
 import { Wrench, Cog, Bot, Sun, Snowflake, Zap, Settings, Stethoscope, Cable, ShoppingCart } from "lucide-react";
-import { Link } from "react-router";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
 import { Button } from "./ui/button";
-import logoImage from "../../imports/nameless-logo.png";
+import logoImage from "../../imports/nameless-logo.webp";
 
 interface ServicesProps {
   limit?: number;
@@ -85,6 +84,9 @@ export function Services({ limit, showCTA = true, isSubPage = false }: ServicesP
               <img
                 src={logoImage}
                 alt="Zentrix Industrial Logo"
+                loading="lazy"
+                width={500}
+                height={438}
                 className="h-36 w-36 md:h-52 md:w-52 object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.1)] dark:grayscale dark:invert dark:contrast-200 dark:brightness-125 transition-all duration-300"
               />
             </div>
@@ -140,9 +142,9 @@ export function Services({ limit, showCTA = true, isSubPage = false }: ServicesP
                 asChild
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8 py-3 rounded-lg shadow-lg"
               >
-                <Link to="/#contacto">
+                <a href="#contacto">
                   Solicitar Cotización
-                </Link>
+                </a>
               </Button>
             </CardContent>
           </Card>

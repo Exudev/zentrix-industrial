@@ -1,7 +1,7 @@
 import { Menu, X, Sun, Moon, ArrowDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
-import logoImage from "../../imports/nameless-logo.png";
+import logoImage from "../../imports/nameless-logo.webp";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -79,6 +79,8 @@ export function Header() {
               <img
                 src={logoImage}
                 alt="Zentrix Industrial Logo"
+                width={500}
+                height={438}
                 className="h-16 w-16 object-contain flex-shrink-0 dark:grayscale dark:invert dark:contrast-200 dark:brightness-125 transition-all duration-300"
               />
             </Link>

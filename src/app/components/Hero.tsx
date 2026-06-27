@@ -1,6 +1,5 @@
 import { ChevronRight } from "lucide-react";
-import { Link } from "react-router";
-import logoImage from "../../imports/nameless-logo.png";
+import logoImage from "../../imports/nameless-logo.webp";
 import { Button } from "./ui/button";
 
 export function Hero() {
@@ -9,7 +8,8 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-slate-950/70 z-10" />
       <img
         src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxpbmR1c3RyaWFsJTIwZmFjdG9yeSUyMG1hY2hpbmVyeXxlbnwxfHx8fDE3ODA4NjQ4NDB8MA&ixlib=rb-4.1.0&q=80&w=1080"
-        alt="Industrial factory interior"
+        alt="Interior de fábrica industrial con maquinaria"
+        fetchPriority="high"
         className="absolute inset-0 w-full h-full object-cover scale-105 animate-pulse-slow"
       />
 
@@ -19,6 +19,8 @@ export function Hero() {
             <img
               src={logoImage}
               alt="Zentrix Industrial Logo"
+              width={500}
+              height={438}
               className="h-36 w-36 md:h-56 md:w-56 object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] dark:grayscale dark:invert dark:contrast-200 dark:brightness-125 transition-all duration-300"
             />
           </div>
@@ -28,7 +30,7 @@ export function Hero() {
         </div>
 
         <p className="text-xl md:text-3xl mb-3 font-light text-slate-100">
-          Soluciones integrales para una indsustria más eficiente.
+          Soluciones integrales para una industria más eficiente.
         </p>
 
         <p className="text-lg md:text-xl mb-8 font-medium text-accent">
@@ -41,10 +43,10 @@ export function Hero() {
             size="lg"
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-lg hover:shadow-accent/20 hover:scale-[1.05] active:scale-95 transition-all duration-300 h-14 px-8 rounded-xl"
           >
-            <Link to="/#servicios" className="flex items-center gap-2">
+            <a href="#servicios" className="flex items-center gap-2">
               Ver Servicios
               <ChevronRight className="w-5 h-5" />
-            </Link>
+            </a>
           </Button>
           <Button
             asChild
@@ -52,9 +54,9 @@ export function Hero() {
             size="lg"
             className="border-2 border-accent text-white hover:bg-accent hover:text-accent-foreground backdrop-blur-sm font-bold hover:scale-[1.05] active:scale-95 transition-all duration-300 h-14 px-8 rounded-xl cursor-pointer"
           >
-            <Link to="/#contacto">
+            <a href="#contacto">
               Solicitar Cotización
-            </Link>
+            </a>
           </Button>
         </div>
 

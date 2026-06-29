@@ -61,16 +61,8 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-semibold text-white">Albert Castillo (Nacional):</p>
                   <a href="https://wa.link/zmvxzy" target="_blank" rel="noopener noreferrer" className="text-xs text-white/70 hover:text-accent transition-colors block">
                     +1 (829) 554-4783 (Llamadas & WhatsApp)
-                  </a>
-                  <p className="font-semibold text-white mt-1.5">WhatsApp (Internacional):</p>
-                  <a href="https://wa.link/zmvxzy" target="_blank" rel="noopener noreferrer" className="text-xs text-white/70 hover:text-accent transition-colors block">
-                    Albert: +34 698 543 478
-                  </a>
-                  <a href="https://wa.link/zmvxzy" target="_blank" rel="noopener noreferrer" className="text-xs text-white/70 hover:text-accent transition-colors block">
-                    Yan Carlos: +34 671 166 201
                   </a>
                 </div>
               </li>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
@@ -71,68 +71,19 @@ Saludos cordiales.`;
               Información de Contacto
             </h3>
             <div className="space-y-6 mb-8">
-              {/* Representante 1: Albert */}
+              {/* Teléfonos */}
               <div className="bg-muted/50 dark:bg-slate-900/40 p-5 rounded-2xl border border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h4 className="font-bold text-primary dark:text-foreground text-lg mb-3 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 bg-accent rounded-full animate-pulse"></span>
-                  Albert Castillo
+                  <Phone className="w-5 h-5 text-accent flex-shrink-0" />
+                  Llamadas y WhatsApp
                 </h4>
-                <div className="space-y-3.5 pl-3">
-                  <div className="flex items-start gap-3">
-                    <Phone className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-secondary dark:text-muted-foreground font-semibold text-sm">
-                        +1 (829) 554-4783
-                      </p>
-                      <p className="text-xs text-secondary/70 dark:text-muted-foreground/60 font-medium">
-                        Llamadas y WhatsApp (Activo)
-                      </p>
-                    </div>
-                  </div>
-                  <a 
-                    href="https://wa.link/zmvxzy" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex items-start gap-3 hover:text-accent dark:hover:text-accent transition-colors group/item"
-                  >
-                    <MessageCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
-                    <div>
-                      <p className="text-secondary dark:text-muted-foreground font-semibold text-sm group-hover/item:text-accent transition-colors">
-                        +34 698 543 478
-                      </p>
-                      <p className="text-xs text-secondary/70 dark:text-muted-foreground/60 font-medium">
-                        Solo WhatsApp (Internacional) - Contactar
-                      </p>
-                    </div>
+                <div className="pl-3">
+                  <a href="https://wa.link/zmvxzy" target="_blank" rel="noopener noreferrer" className="text-secondary dark:text-muted-foreground text-sm font-semibold hover:text-accent dark:hover:text-accent transition-colors">
+                    +1 (829) 554-4783
                   </a>
                 </div>
               </div>
 
-              {/* Representante 2: Yancarlos */}
-              <div className="bg-muted/50 dark:bg-slate-900/40 p-5 rounded-2xl border border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h4 className="font-bold text-primary dark:text-foreground text-lg mb-3 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 bg-accent rounded-full animate-pulse"></span>
-                  Yan Carlos De la Cruz
-                </h4>
-                <div className="space-y-3.5 pl-3">
-                  <a 
-                    href="https://wa.link/zmvxzy" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex items-start gap-3 hover:text-accent dark:hover:text-accent transition-colors group/item"
-                  >
-                    <MessageCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
-                    <div>
-                      <p className="text-secondary dark:text-muted-foreground font-semibold text-sm group-hover/item:text-accent transition-colors">
-                        +34 671 166 201
-                      </p>
-                      <p className="text-xs text-secondary/70 dark:text-muted-foreground/60 font-medium">
-                        Solo WhatsApp (Internacional) - Contactar
-                      </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
 
               {/* Correos Electrónicos Oficiales */}
               <div className="bg-muted/50 dark:bg-slate-900/40 p-5 rounded-2xl border border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
@@ -142,13 +93,11 @@ Saludos cordiales.`;
                 </h4>
                 <div className="space-y-3.5 pl-3">
                   <div className="flex items-start gap-3">
-                    <div className="text-xs font-semibold text-secondary/70 dark:text-muted-foreground/60 w-24 flex-shrink-0">Contacto:</div>
                     <a href="mailto:contacto@zentrix-industrial.com" className="text-secondary dark:text-muted-foreground text-sm font-semibold hover:text-accent dark:hover:text-accent transition-colors break-all">
                       contacto@zentrix-industrial.com
                     </a>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="text-xs font-semibold text-secondary/70 dark:text-muted-foreground/60 w-24 flex-shrink-0">Gerencia:</div>
                     <a href="mailto:gerencia@zentrix-industrial.com" className="text-secondary dark:text-muted-foreground text-sm font-semibold hover:text-accent dark:hover:text-accent transition-colors break-all">
                       gerencia@zentrix-industrial.com
                     </a>
@@ -185,8 +134,8 @@ Saludos cordiales.`;
             <h3 className="text-2xl font-bold text-primary dark:text-foreground mb-6">
               Formulario de Cotización
             </h3>
-            <form 
-              onSubmit={handleSubmit} 
+            <form
+              onSubmit={handleSubmit}
               className="space-y-5"
             >
               <div>
@@ -235,7 +184,7 @@ Saludos cordiales.`;
               </div>
               <div>
                 <Label className="block text-primary dark:text-foreground mb-2 font-semibold text-sm">Servicio Requerido *</Label>
-                <select 
+                <select
                   name="service"
                   value={service}
                   onChange={(e) => setService(e.target.value)}

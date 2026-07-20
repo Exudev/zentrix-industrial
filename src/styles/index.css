@@ -205,8 +205,32 @@
   }
 
   input {
-    font-size: var(--text-base);
+    font-size: var(--font-size-base);
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
 }
+
+/* Custom UI Utilities for modern visual effects */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(30, 58, 138, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .bg-grid-pattern {
+  background-image: radial-gradient(rgba(251, 191, 36, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-card {
+  background: rgba(17, 27, 48, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
